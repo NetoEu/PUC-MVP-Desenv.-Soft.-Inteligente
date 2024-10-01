@@ -4,7 +4,7 @@ import joblib
 
 from model.preprocessador import PreProcessador
 
-class Model:
+class Modelo:
     
     # TODO: Guardar model como atributo e o preditor receber as entradas.
     # TODO: preditor -> realiza_predicao
