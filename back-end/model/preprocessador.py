@@ -30,7 +30,7 @@ class PreProcessador:
     
     def preparar_form(form):
         """ Prepara os dados recebidos do front para serem usados no modelo. """
-        X_input = np.array([form.credit_Score, 
+        X_input = np.array([form.credit_score, 
                             form.age, 
                             form.tenure, 
                             form.balance, 

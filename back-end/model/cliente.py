@@ -16,7 +16,7 @@ class Cliente(Base):
     id = Column(Integer, primary_key=True)
     name = Column("Name", String(50))
     credit_score = Column("CreditScore", Integer)
-    age = Column("Glucose", Integer)
+    age = Column("Age", Integer)
     tenure = Column("Tenure", Integer)
     balance = Column("Balance", Float)
     products_number = Column("ProductsNumber", Integer)
@@ -29,9 +29,9 @@ class Cliente(Base):
     gender_Female = Column("GenderFemale", Integer)
     gender_Male = Column("GenderMale", Integer)
     churn = Column("Churn", Integer, nullable=True)
-    data_insercao = Column(DateTime, default=datetime.now())
+    data_insercao = Column(DateTime, default=datetime.now)
     
-    def __init__(self, credit_score:int, age:int, tenure:int, balance:float,
+    def __init__(self, name:str, credit_score:int, age:int, tenure:int, balance:float,
                  products_number:int, credit_card:float, active_member:int, 
                  estimated_salary:float, country_France:int, country_Germany:int,
                  country_Spain:int, gender_Female:int, gender_Male:int, churn:int, 
