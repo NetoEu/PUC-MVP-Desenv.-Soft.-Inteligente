@@ -15,7 +15,7 @@ class ClienteSchema(BaseModel):
     balance: float = 35000
     products_number: int = 2
     credit_card: int = 1
-    active_member: float = 0.627
+    active_member: float = 1
     estimated_salary: float = 5005
     country_France: int = 1
     country_Germany: int = 0
@@ -35,7 +35,7 @@ class ClienteViewSchema(BaseModel):
     balance: float = 35000
     products_number: int = 2
     credit_card: int = 1
-    active_member: float = 0.627
+    active_member: float = 1
     estimated_salary: float = 5005
     country_France: int = 1
     country_Germany: int = 0
