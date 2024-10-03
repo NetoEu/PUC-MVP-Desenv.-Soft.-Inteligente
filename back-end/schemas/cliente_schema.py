@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, List
 from model.cliente import Cliente
 import json
@@ -8,20 +8,20 @@ class ClienteSchema(BaseModel):
     """ 
         Define como um novo paciente a ser inserido deve ser representado
     """
-    name: str = "Maria"
-    credit_score: int = 600
-    age: int = 26
-    tenure: int = 3
-    balance: float = 35000
-    products_number: int = 2
-    credit_card: int = 1
-    active_member: float = 1
-    estimated_salary: float = 5005
-    country_France: int = 1
-    country_Germany: int = 0
-    country_Spain: int = 0
-    gender_Female: int = 1
-    gender_Male: int = 0
+    name: str = Field("Maria", description="Nome do Cliente")
+    credit_score: int = Field(600, description="Pontuação de Crédito")
+    age: int = Field(26, description="Idade do cliente")
+    tenure: int = Field(3, description="Posses do cliente")
+    balance: float = Field(35000, description="Saldo bancário do cliente")
+    products_number: int = Field(2, description="Qntd de produtos do banco")
+    credit_card: int = Field(1, description="Utiliza cartão de crédito (1 -> Sim / 0 -> Não")
+    active_member: float = Field(1, description="Membro ativo (1 -> Sim / 0 -> Não")
+    estimated_salary: float = Field(5005, description="Salário estimado")
+    country_France: int = Field(1, description="País França (1 -> Sim / 0 -> Não")
+    country_Germany: int = Field(0, description="País Alemanhã (1 -> Sim / 0 -> Não")
+    country_Spain: int = Field(0, description="País Espanha (1 -> Sim / 0 -> Não")
+    gender_Female: int = Field(1, description="Sexo Feminino (1 -> Sim / 0 -> Não")
+    gender_Male: int = Field(0, description="Sexo Masculino (1 -> Sim / 0 -> Não")
     
 class ClienteViewSchema(BaseModel):
     """
@@ -99,7 +99,7 @@ def apresenta_clientes(clientes: List[Cliente]):
                 "age": cliente.age,
                 "tenure": cliente.tenure,
                 "balance": cliente.balance,
-                "products_number": cliente.produtcs_number,
+                "products_number": cliente.products_number,
                 "credit_card": cliente.credit_card,
                 "active_member": cliente.active_member,
                 "estimated_salary": cliente.estimated_salary,

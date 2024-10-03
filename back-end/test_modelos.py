@@ -27,7 +27,7 @@ colunas = ['credit_score',
 # Carga dos dados
 dataset = Carregador.carregar_dados(url_dados, colunas)
 array = dataset.values
-X = array[:,0:-1]
+x = array[:,0:-1]
 y = array[:,-1]
     
 # Método para testar o modelo de Regressão Logística a partir do arquivo correspondente
@@ -72,7 +72,7 @@ def test_modelo_xgb():
     modelo_rf = Pipeline.carrega_pipeline(xgb_path)
 
     # Obtendo as métricas do XGBClassifier
-    acuracia_xgb = Avaliador.avaliar(modelo_rf, X, y)
+    acuracia_xgb = Avaliador.avaliar(modelo_rf, x, y)
     
     # Testando as métricas do XGBClassifier
     # Modifique as métricas de acordo com seus requisitos

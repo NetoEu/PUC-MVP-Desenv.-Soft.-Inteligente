@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Churn Rate</title>
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Sistema de Predição</h2>
+            <br>
+            <p>Este sistema foi desenvolvido para prever possíveis taxas de rotatividade (churn) de clientes.</p>
+            <p>Para isso, basta preencher os campos abaixo com os dados do cliente e clicar em "Visualizar Taxa".</p>
+        </div>
+        <!-- <div class="banner">
+            <img src="img/home.jpeg">
+        </div> -->
+    </header>
+
+     <!-- Opções para adicionar um novo item -->
+     
+    <section class="newItem">
+        <input type="text" id="newInput" placeholder="Nome">
+        <input type="text" id="newCreditScore" placeholder="CreditScore">
+        <input type="text" id="newAge" placeholder="Age">
+        <input type="text" id="newTenure" placeholder="Tenure">
+        <input type="text" id="newBalance" placeholder="Balance">
+        <input type="text" id="newProductsNumber" placeholder="Products Number">
+        <input type="text" id="newCreditCard" placeholder="Credit Card (1-sim / 0-nao)">
+        <input type="text" id="newActiveMember" placeholder="Active Member (1-sim / 0-nao)">
+        <input type="text" id="newEstimatedSalary" placeholder="Estimated Salary">
+        <input type="text" id="newCountryFrance" placeholder="Country France (1-sim / 0-nao)">
+        <input type="text" id="newCountryGermany" placeholder="Country Germany (1-sim / 0-nao)">
+        <input type="text" id="newCountrySpain" placeholder="Country Spain (1-sim / 0-nao)">
+        <input type="text" id="newGenderFemale" placeholder="Gender Female (1-sim / 0-nao)">
+        <input type="text" id="newGenderMale" placeholder="Gender Male (1-sim / 0-nao)">
+        <span onclick="newItem()" class="addBtn">Visualizar Taxa</span>
+    </section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable">
+            <tr>
+                <th>Nome</th>
+                <th>CreditScore</th>
+                <th>Age</th>
+                <th>Tenure</th>
+                <th>Balance</th>
+                <th>Products Number</th>
+                <th>Credit Card</th>
+                <th>Active Member</th>
+                <th>Estimated Salary</th>
+                <th>Country France</th>
+                <th>Country Germany</th>
+                <th>Country Spainy</th>
+                <th>Gender Female (0 or 1)</th>
+                <th>Gender Male (1 or 0)</th>
+                <th>Churn Rate</th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -3,12 +3,12 @@ from model.model import Modelo
 
 class Avaliador:
 
-    def avaliar(model, X_test, Y_test):
+    def avaliar(model, x_test, y_test):
         """ 
             Faz uma predição e avalia o modelo. Poderia parametrizar o tipo de
             avaliação, entre outros.
         """
-        predicoes = Modelo.preditor(model, X_test)
+        predicoes = Modelo.realiza_predicao(model, x_test)
         
         # Caso o seu problema tenha mais do que duas classes, altere o parâmetro average
-        return accuracy_score(Y_test, predicoes)
+        return accuracy_score(y_test, predicoes)

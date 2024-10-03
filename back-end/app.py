@@ -62,13 +62,11 @@ def predict(form: ClienteSchema):
     # TODO: Instanciar classes
 
     # Preparando os dados para o modelo
-    X_input = PreProcessador.preparar_form(form)
+    x_input = PreProcessador.preparar_form(form)
     # Carregando modelo
-    model_path = './machineLearning/pipelines/xgb_bankChurn.pkl'
+    model_path = r'C:\Users\Notbook\Desktop\PUC\Eng. Software\MVP\MVP - Qualidade de Software e Sistemas Inteligentes\machineLearning\pipelines\xgb_bankChurn.pkl'
     # modelo = Model.carrega_modelo(ml_path)
     pipeline = Pipeline.carrega_pipeline(model_path)
-    # Realizando a predição
-    churn = int(Modelo.preditor(pipeline, X_input)[0])
 
     # Verifica se o pipeline foi carregado corretamente
     if pipeline is None:
@@ -77,9 +75,9 @@ def predict(form: ClienteSchema):
     print("Pipeline carregado com sucesso.")
 
     # Realizando a predição
-    satisfaction = int(Modelo.realiza_predicao(pipeline, X_input)[0])
-    print(f"Resultado da predição bruta: {Modelo.realiza_predicao(pipeline, X_input)}")
-    print(f"Satisfaction predito: {satisfaction}")
+    churn = int(Modelo.realiza_predicao(pipeline, x_input)[0])
+    print(f"Resultado da predição bruta: {Modelo.realiza_predicao(pipeline, x_input)}")
+    print(f"Churn Rate: {churn}")
     
     cliente = Cliente(
         name = form.name,
@@ -96,9 +94,9 @@ def predict(form: ClienteSchema):
         country_Spain = form.country_Spain,
         gender_Female = form.gender_Female,
         gender_Male = form.gender_Male,
-        churn = form.churn
+        churn = churn
     )
-    logger.debug(f"Adicionando produto de nome: '{cliente.name}'")
+    logger.debug(f"Adicionando cliente de nome: '{cliente.name}'")
     
     try:
         # Criando conexão com a base

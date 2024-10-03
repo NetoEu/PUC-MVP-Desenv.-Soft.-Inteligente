@@ -29,13 +29,11 @@ class Cliente(Base):
     gender_Female = Column("GenderFemale", Integer)
     gender_Male = Column("GenderMale", Integer)
     churn = Column("Churn", Integer, nullable=True)
-    data_insercao = Column(DateTime, default=datetime.now)
     
     def __init__(self, name:str, credit_score:int, age:int, tenure:int, balance:float,
                  products_number:int, credit_card:float, active_member:int, 
                  estimated_salary:float, country_France:int, country_Germany:int,
-                 country_Spain:int, gender_Female:int, gender_Male:int, churn:int, 
-                 data_insercao:Union[DateTime, None] = None):
+                 country_Spain:int, gender_Female:int, gender_Male:int, churn:int):
         """
         Cria um Cliente
 
@@ -72,7 +70,3 @@ class Cliente(Base):
         self.gender_Female = gender_Female
         self.gender_Male = gender_Male
         self.churn = churn
-
-        # se não for informada, será o data exata da inserção no banco
-        if data_insercao:
-            self.data_insercao = data_insercao

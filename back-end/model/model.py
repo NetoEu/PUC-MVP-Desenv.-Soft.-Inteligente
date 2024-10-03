@@ -20,8 +20,8 @@ class Modelo:
             raise Exception('Formato de arquivo não suportado')
         return model
     
-    def realiza_predicao(model, X_input):
+    def realiza_predicao(model, x_input):
         """Realiza a predição de um paciente com base no modelo treinado
         """
-        diagnosis = model.predict(X_input)
+        diagnosis = model.predict(x_input)
         return diagnosis
